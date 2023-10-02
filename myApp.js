@@ -19,50 +19,67 @@ const personSchema = new Schema({
   favoriteFoods: [String]
 });
 
-let Person;
+const Person = mongoose.model("Person", personSchema);
 
+//#3
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+  const mattRoss = new Person({ 
+    name: "Matt Ross", age: 41, favoriteFoods: ["pasta, BBQ, cake"]
+  })
+  mattRoss.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data);
+  })
+  
 };
 
+//#4
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
 };
 
+//#5
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
 };
 
+//#6
 const findOneByFood = (food, done) => {
   done(null /*, data*/);
 };
 
+//#7
 const findPersonById = (personId, done) => {
   done(null /*, data*/);
 };
 
+//#8
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
 
   done(null /*, data*/);
 };
 
+//#9
 const findAndUpdate = (personName, done) => {
   const ageToSet = 20;
 
   done(null /*, data*/);
 };
 
+//#10
 const removeById = (personId, done) => {
   done(null /*, data*/);
 };
 
+//#11
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
 
   done(null /*, data*/);
 };
 
+//#12
 const queryChain = (done) => {
   const foodToSearch = "burrito";
 
